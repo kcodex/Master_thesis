@@ -9,7 +9,13 @@ function App() {
     return (
         <div className="App">
             <div>
-                <h1>Question</h1>
+                <h1>
+                    Pytanie{' '}
+                    <img
+                        className="icon-class"
+                        src="https://img.icons8.com/color/100/000000/commercial-development-management.png"
+                    />
+                </h1>
                 <Question>
                     <Answer />
                     <Answer />

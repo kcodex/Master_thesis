@@ -1,6 +1,7 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
 import MainPage from './MainPage';
+import ChooseMethod from './ChooseMethod';
 
 const Router = () => {
     return (
@@ -12,6 +13,7 @@ const Router = () => {
             <BrowserRouter>
                 <Route path="/" exact component={MainPage} />
                 <Route path="/quiz" component={App} />
+                <Route path="/choose-method" exact component={ChooseMethod} />
             </BrowserRouter>
         </div>
     );

@@ -10,45 +10,47 @@
   right: 0px;
 }
 .App {
-  border: 3px solid blue;
   height: 100vh;
   width: 100vw;
-  background-color: #fff;
+  background-color: #daebe8;
   display: flex;
   justify-content: center;
 }
 h1 {
   text-align: center;
-  padding-top: 9vh;
-  border: 3px solid fuchsia;
+  padding-top: 7vh;
+}
+.icon-class {
+  position: absolute;
+  top: -0.9%;
+  left: 43%;
 }
 .question-container {
   width: 50vw;
+  height: 80vh;
   text-align: center;
-  border: 3px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .question {
-  height: 30vh;
+  height: 35vh;
   width: 40vw;
-  border: 3px solid green;
-  border-radius: 30px;
+  background-color: rgb(223, 235, 235);
+  border: 3px solid teal;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .answer {
-  height: 8vh;
-  background-color: white;
-  border: 2px solid gray;
-  border-radius: 50px;
-  width: 35vw;
-  margin: 1vh;
+  margin: 3vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.answer-button {
+  width: 35vw;
 }
 .right {
   margin-left: 6vw;
@@ -74,9 +76,45 @@ h1 {
   width: 10vw;
   height: 10vh;
 }
-
-.main-button {
+.choose-method-button {
   position: absolute;
   left: 40%;
   bottom: 50%;
+}
+.page-in-making {
+  font-size: 30px;
+  position: absolute;
+  left: 33%;
+  bottom: 65%;
+}
+
+body {
+  background-color: #daebe8;
+  height: 100vh;
+  overflow: hidden;
+  /* background-color: #8d9db6 button gray*/
+}
+.header {
+  font-size: 40px;
+  font-weight: 700;
+  position: absolute;
+  left: 25%;
+  top: 15%
+}
+.main-button-quiz {
+  position: absolute;
+  left: 43.5%;
+  bottom: 55%;
+}
+.main-button-manago {
+  position: absolute;
+  left: 40%;
+  bottom: 45%;
+}
+.main-page-img {
+  position: relative;
+  right: 5%;
+  bottom: -90px;
+  width: 45vw;
+  height: auto;
 }
