@@ -16,9 +16,10 @@
   display: flex;
   justify-content: center;
 }
-h1 {
+.question-header {
   text-align: center;
   padding-top: 7vh;
+  padding-bottom: 1vh;
 }
 .icon-class {
   position: absolute;
@@ -34,7 +35,7 @@ h1 {
   align-items: center;
 }
 .question {
-  height: 35vh;
+  height: 30vh;
   width: 40vw;
   background-color: rgb(223, 235, 235);
   border: 3px solid teal;
@@ -60,16 +61,26 @@ h1 {
   justify-content: center;
 }
 .timer {
+  text-align: center;
+  position: relative;
+  bottom: 20vh;
+  right: 2.8vw;
   width: 20vw;
-  height: 30vh;
-  border: 3px solid yellow;
+  height: 8vh;
 }
-
+.timer h1 {
+  font-size: 40px;
+}
 .counter {
+  color: rgb(6, 77, 77);
+  font-size: 29px;
+  text-align: center;
   width: 20vw;
   height: 15vh;
-  border: 3px solid purple;
   margin: 2vh 0;
+}
+p {
+  padding-top: 5vh;
 }
 
 .quit-button {
@@ -117,4 +128,45 @@ body {
   bottom: -90px;
   width: 45vw;
   height: auto;
+}
+
+.timerContainer {
+  position: relative;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+}
+.timerCircle {
+  fill: none;
+  stroke: none;
+}
+.timerPath {
+  stroke-width: 7px;
+  stroke: gray;
+}
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+.timerLabel {
+  width: 190px;
+  height: 190px;
+}
+.timerPathRemaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  stroke: currentColor;
+}
+.timerPathRemaining.green {
+  color: rgb(3, 75, 230);
+}
+
+.timerPathRemaining.orange {
+  color: #fdb813;
+}
+
+.timerPathRemaining.red {
+  color: red;
 }

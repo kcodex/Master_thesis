@@ -1,6 +1,5 @@
 import './App.css';
 import Question from './components/Question';
-import Answer from './components/Answer';
 import Timer from './components/Timer';
 import QuestionCounter from './components/QuestionCounter';
 import QuitButton from './components/QuitButton';
@@ -9,19 +8,15 @@ function App() {
     return (
         <div className="App">
             <div>
-                <h1>
+                <h1 className="question-header">
                     Pytanie{' '}
                     <img
+                        alt="management"
                         className="icon-class"
                         src="https://img.icons8.com/color/100/000000/commercial-development-management.png"
                     />
                 </h1>
-                <Question>
-                    <Answer />
-                    <Answer />
-                    <Answer />
-                    <Answer />
-                </Question>
+                <Question />
             </div>
             <div className="right">
                 <Timer />

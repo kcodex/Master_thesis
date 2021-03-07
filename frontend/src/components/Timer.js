@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+// let color = 'red';
 export default class Timer extends Component {
     state = {
-        minutes: 1,
-        seconds: 15,
+        minutes: 0,
+        seconds: 45,
+        color: 'green',
     };
 
     componentDidMount() {
@@ -24,6 +26,12 @@ export default class Timer extends Component {
                     }));
                 }
             }
+            if (seconds <= 31 && minutes === 0) {
+                this.setState({ color: 'orange' });
+            }
+            if (seconds <= 11 && minutes === 0) {
+                this.setState({ color: 'red' });
+            }
         }, 1000);
     }
 
@@ -34,14 +42,34 @@ export default class Timer extends Component {
     render() {
         const { minutes, seconds } = this.state;
         return (
-            <div className="timer">
-                {minutes === 0 && seconds === 0 ? (
-                    <h1>Koniec czasu</h1>
-                ) : (
-                    <h1>
-                        {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
-                    </h1>
-                )}
+            <div className="timerContainer">
+                <svg className="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g className="timerCircle">
+                        <circle className="timerPath" cx="50" cy="50" r="45"></circle>
+                        <path
+                            id="timerPathRemaining"
+                            stroke-dasharray="283"
+                            className={`timerPathRemaining ${this.state.color}`}
+                            d="
+            M 50, 50
+            m -45, 0
+            a 45,45 0 1,0 90,0
+            a 45,45 0 1,0 -90,0
+          "
+                        ></path>
+                    </g>
+                </svg>
+                <span id="timerLabel" className="timerLabel">
+                    <div className="timer">
+                        {minutes === 0 && seconds === 0 ? (
+                            <h1>Koniec!</h1>
+                        ) : (
+                            <h1>
+                                {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+                            </h1>
+                        )}
+                    </div>
+                </span>
             </div>
         );
     }

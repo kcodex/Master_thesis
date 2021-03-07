@@ -1,7 +1,17 @@
-const Answer = () => {
+import React, { useState } from 'react';
+
+const Answer = (props) => {
+    const [choice, setChoice] = useState(0);
+
+    const onButtonClick = () => {
+        setChoice(choice + 1);
+    };
+
     return (
         <div className="answer">
-            <button className="answer-button ui button big teal">Tutaj będzie odpowiedź</button>
+            <button onClick={onButtonClick} className="answer-button ui button big teal">
+                {props.content}, klik: {choice}
+            </button>
         </div>
     );
 };
